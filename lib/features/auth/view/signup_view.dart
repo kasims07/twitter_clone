@@ -22,7 +22,7 @@ class _SignUpViewState extends ConsumerState<SignUpView> {
   final TextEditingController passwordcontroller = TextEditingController();
 
   void onSignUp() {
-    ref.read(AuthControllerProvider.notifier).Signup(
+    ref.read(authControllerProvider.notifier).Signup(
         email: emailcontroller.text,
         password: passwordcontroller.text,
         context: context);
@@ -30,7 +30,7 @@ class _SignUpViewState extends ConsumerState<SignUpView> {
 
   @override
   Widget build(BuildContext context) {
-    final loading = ref.watch(AuthControllerProvider);
+    final loading = ref.watch(authControllerProvider);
     return Scaffold(
       appBar: appBar,
       body: loading
